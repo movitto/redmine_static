@@ -1,3 +1,24 @@
-= static
+= redmine_static
 
-Description goes here
+Provides a simple way to embed static content in a Redmine install
+
+= Installation
+* Install redmine as instructed on redmine.org
+* cd <redmine-path>/vendor/plugins
+* git clone git://github.com/movitto/redmine_static.git
+* restart your webserver
+* login as an admin
+* Enable static content module for all projects that require it
+  * Admin > Projects > [project-name] > Modules > Static > Save
+* Add view / modify permissions to all roles that require it 
+  * Admin > Roles and Permissions > [role-name] > Check 'View Static Content' and/or 'Manage static content' > Save
+* View / Add Static Content
+  * Navigate to project, click 'Static Content' in main navigation
+
+= License
+
+redmine_static is licensed under the MIT license
+
+= Authors
+
+* Mo Morsi - http://mo.morsi.org - <mo@morsi.org>
