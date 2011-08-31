@@ -1,0 +1,46 @@
+<h2>Static Content</h2>
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'style', :plugin => 'redmine_static' %>
+<% end %>
+
+<% @contents.each { |item| %>
+  <div class="static_content_item">
+  <div class="static_content_item_title" >
+    <%= link_to item.title, :action => "show", :id => item.id %>
+  </div>
+  <div class="static_content_item_actions">
+    <%= link_to "delete", :action => "delete_content", :id => item.id %>
+  </div>
+  </div>
+<% } %>
+
+<h2>New Content</h2>
+<% form_for :content, @content, :url => { :action => :new_content } do |f| %>
+  <%= f.error_messages %>
+
+  <input type="hidden" name="content[project_id]" value="<%= @project.identifier %>" />
+  <input type="hidden" name="content[user_id]"    value="<%= User.current.id %>" />
+  <div class="form_row">
+  <div class="form_label">
+  <%= f.label      :title    %>
+  </div>
+  <div class="form_field">
+  <%= f.text_field :title, :size => 44    %>
+  </div>
+  </div>
+  <div style="clear: both;"></div>
+
+  <div class="form_row">
+  <div class="form_label">
+  <%= f.label      :content    %>
+  </div>
+  <div class="form_field">
+  <%= f.text_area :content, :cols => 50 %>
+  </div>
+  </div>
+  <div style="clear: both;"></div>
+
+  <div class="form_row">
+  <%= submit_tag   "Create" %>
+  </div>
+<% end %>
