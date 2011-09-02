@@ -2,6 +2,11 @@
 
 Provides a simple way to embed static content in a Redmine install
 
+<b>Warning</b>:
+Use this w/ caution, only allow certain users permission to manage static content.
+By allowing users to upload / view raw html you are opening yourself up to the
+possibility of a XSS or similar attack
+
 = Installation
 * Install redmine as instructed on redmine.org
 * cd <redmine-path>/vendor/plugins
