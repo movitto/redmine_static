@@ -11,6 +11,8 @@ possibility of a XSS or similar attack
 * Install redmine as instructed on redmine.org
 * cd <redmine-path>/vendor/plugins
 * git clone git://github.com/movitto/redmine_static.git
+* cd ../..
+* RAILS_ENV='production' rake db:migrate_plugins
 * restart your webserver
 * login as an admin
 * Enable static content module for all projects that require it
