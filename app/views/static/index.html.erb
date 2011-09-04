@@ -9,7 +9,9 @@
     <%= link_to item.title, :action => "show", :id => item.id %>
   </div>
   <div class="static_content_item_actions">
+    <% if User.current.allowed_to? :manage_static_content, @project %>
     <%= link_to "delete", :action => "delete_content", :id => item.id %>
+    <% end %>
   </div>
   </div>
 <% } %>

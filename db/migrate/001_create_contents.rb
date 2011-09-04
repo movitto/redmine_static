@@ -4,7 +4,7 @@ class CreateContents < ActiveRecord::Migration
       t.column :project_id, :integer
       t.column :user_id, :integer
       t.column :title, :string
-      t.column :content, :string
+      t.column :content, :text
       t.column :last_modified, :timestamp
     end
   end

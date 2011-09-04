@@ -26,9 +26,7 @@ class StaticController < ApplicationController
 
     redirect_to :action => :show,
                 :id => @content.id,
-                :project_id => params[:content][:project_id],
-                :content    => params[:content] if success
-    
+                :project_id => params[:content][:project_id] if success
   end
 
   def delete_content
